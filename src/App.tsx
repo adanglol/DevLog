@@ -1,6 +1,6 @@
 // src/App.tsx
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import {Route, Routes,useNavigate,Link } from 'react-router-dom';
 
 const App: React.FC = () => {
   // Inline Home Component
@@ -9,7 +9,7 @@ const App: React.FC = () => {
       <div>
         <h1>Home Page</h1>
         <p>Welcome to the Home Page!</p>
-        <a href="/about">Go to About Page</a>
+        <Link to="/about">Go to About Page</Link>
       </div>
     );
   };
@@ -41,13 +41,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <Router basename='/devlog'>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} /> {/* Catch-all route for 404 */}
       </Routes>
-    </Router>
   );
 };
 
