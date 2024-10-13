@@ -41,7 +41,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <Router>
+    <Router basename='/devlog'>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
